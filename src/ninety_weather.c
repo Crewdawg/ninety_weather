@@ -13,11 +13,11 @@
 // This is the Default APP_ID to work with old versions of httpebble
 //#define MY_UUID { 0x91, 0x41, 0xB6, 0x28, 0xBC, 0x89, 0x49, 0x8E, 0xB1, 0x47, 0x04, 0x9F, 0x49, 0xC0, 0x99, 0xAD }
 
-#define MY_UUID { 0x91, 0x41, 0xB6, 0x28, 0xBC, 0x89, 0x49, 0x8E, 0xB1, 0x47, 0x29, 0x08, 0xF1, 0x7C, 0x3F, 0xAC}
+#define UUID { 0x88, 0xa9, 0x7c, 0xfd, 0x23, 0x77, 0x46, 0x3a, 0x84, 0xbd, 0xb8, 0x5e, 0xb4, 0x96, 0x40, 0x63 }
 
 PBL_APP_INFO(MY_UUID,
-	     "91 Weather", "rfrcarvalho",
-	     1, 5, /* App major/minor version */
+	     "92 Weather", "Crewdawg",
+	     1, 7, /* App major/minor version */
 	     RESOURCE_ID_IMAGE_MENU_ICON,
 	     APP_INFO_WATCH_FACE);
 
@@ -594,7 +594,7 @@ void request_weather() {
 	
 	// Build the HTTP request
 	DictionaryIterator *body;
-	HTTPResult result = http_out_get("http://www.zone-mr.net/api/weather.php", WEATHER_HTTP_COOKIE, &body);
+	HTTPResult result = http_out_get("http://www.canyon-networks.com/api/weather.php", WEATHER_HTTP_COOKIE, &body);
 	if(result != HTTP_OK) {
 		return;
 	}
