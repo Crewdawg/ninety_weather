@@ -15,7 +15,7 @@
 
 #define UUID { 0x88, 0xa9, 0x7c, 0xfd, 0x23, 0x77, 0x46, 0x3a, 0x84, 0xbd, 0xb8, 0x5e, 0xb4, 0x96, 0x40, 0x63 }
 
-PBL_APP_INFO(MY_UUID,
+PBL_APP_INFO(UUID,
 	     "92 Weather", "Crewdawg",
 	     1, 7, /* App major/minor version */
 	     RESOURCE_ID_IMAGE_MENU_ICON,
@@ -422,11 +422,11 @@ void handle_minute_tick(AppContextRef ctx, PebbleTickEvent *t) {
 
     update_display(t->tick_time);
 	
-	if(!located || !(t->tick_time->tm_min % 15))
-	{
+	//if(!located || !(t->tick_time->tm_min % 15))
+	//{
 		// Every 15 minutes, request updated weather
 		http_location_request();
-	}
+	//}
 	
 	// Every 15 minutes, request updated time
 	http_time_request();
